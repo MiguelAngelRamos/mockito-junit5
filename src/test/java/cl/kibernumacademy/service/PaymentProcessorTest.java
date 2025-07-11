@@ -1,8 +1,13 @@
 package cl.kibernumacademy.service;
 
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.ArgumentCaptor;
 import org.mockito.Captor;
+
+// Mockito
+import static org.mockito.BDDMockito.*;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
@@ -32,4 +37,14 @@ public class PaymentProcessorTest {
   private User user;
 
 
+  @BeforeEach
+  void setUp() {
+    user = new User("Richard Stallman"); // crea un usuario de prueba
+    paymentProcessor = new PaymentProcessor(creditCardPayment, bankTransferPayment, paymentHistory); // Inyecta los Mocks
+  }
+
+  @Test
+  void testProcessPayment_CreditCard_Success() {
+    given(creditCardPayment.process(100, user)).willReturn(true);
+  }
 }
