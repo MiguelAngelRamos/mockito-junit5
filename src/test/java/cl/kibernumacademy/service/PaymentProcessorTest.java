@@ -6,6 +6,8 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.ArgumentCaptor;
 import org.mockito.Captor;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.ArgumentMatchers.any;
 // Mockito
@@ -55,6 +57,32 @@ public class PaymentProcessorTest {
     verify(creditCardPayment).process(100.0, user);
     verify(paymentHistory).add(any(Payment.class));
     
+  }
+
+  @Test
+  void testProcessPayment_BankTransfer_Success() {
+    given(bankTransferPayment.process(200.0, user)).willReturn(true);
+    boolean result = paymentProcessor.processPayment(200, user, "BankTransfer");
+    assertTrue(result); // Verificamos que el resultado sea exitoso
+    verify(bankTransferPayment).process(200.0, user);
+    verify(paymentHistory).add(any(Payment.class));
+    
+  }
+
+  @Test
+  void testProcessPayment_InvalidAmount() {
+    Exception exception = assertThrows(IllegalArgumentException.class, () -> paymentProcessor.processPayment(0, user, "CreditCard"));
+
+    // Verificar el mensaje de la excepción
+    assertEquals("Invalid amount or user", exception.getMessage());
+  }
+
+  @Test
+  void testProcessPayment_NullUser() {
+    Exception exception = assertThrows(IllegalArgumentException.class, () -> paymentProcessor.processPayment(100, null, "CreditCard"));
+
+    // Verificar el mensaje de la excepción
+    assertEquals("Invalid amount or user", exception.getMessage());
   }
 }
 

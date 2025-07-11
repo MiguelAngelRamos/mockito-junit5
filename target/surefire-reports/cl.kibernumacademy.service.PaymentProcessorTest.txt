@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: cl.kibernumacademy.service.PaymentProcessorTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.064 s - in cl.kibernumacademy.service.PaymentProcessorTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.034 s - in cl.kibernumacademy.service.PaymentProcessorTest
