@@ -1,0 +1,4 @@
+cl\kibernumacademy\model\UserTest.class
+cl\kibernumacademy\service\PaymentProcessorTest.class
+cl\kibernumacademy\model\PaymentHistoryTest.class
+cl\kibernumacademy\model\PaymentTest.class

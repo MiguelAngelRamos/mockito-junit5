@@ -1,0 +1,7 @@
+cl\kibernumacademy\model\PaymentHistory.class
+cl\kibernumacademy\service\CreditCardPayment.class
+cl\kibernumacademy\service\PaymentMethod.class
+cl\kibernumacademy\service\PaymentProcessor.class
+cl\kibernumacademy\service\BankTransferPayment.class
+cl\kibernumacademy\model\Payment.class
+cl\kibernumacademy\model\User.class
