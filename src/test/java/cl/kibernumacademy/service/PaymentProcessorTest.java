@@ -6,6 +6,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.ArgumentCaptor;
 import org.mockito.Captor;
 
+import static org.junit.jupiter.api.Assertions.assertTrue;
 // Mockito
 import static org.mockito.BDDMockito.*;
 import org.mockito.InjectMocks;
@@ -46,5 +47,11 @@ public class PaymentProcessorTest {
   @Test
   void testProcessPayment_CreditCard_Success() {
     given(creditCardPayment.process(100, user)).willReturn(true);
+    boolean result = paymentProcessor.processPayment(100, user, "CreditCard");
+    assertTrue(result); // Verificamos que el resultado sea exitoso
+
+    verify(creditCardPayment.process(100, user));
+    verify(paymentHistory).add(any(Payment.class));
+    
   }
 }
