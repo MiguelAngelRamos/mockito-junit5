@@ -25,7 +25,7 @@ public class PaymentProcessor {
         // este método delega la operación al método process del mock correspondiente.
         // Por ejemplo, si method es &quot;CreditCard&quot;, se llama a creditCardPayment.process(...)
         // y el valor retornado depende de la configuración del mock en el test (given...willReturn...).
-<span class="pc bpc" id="L28" title="1 of 4 branches missed.">        if (amount &lt;= 0 || user == null) {</span>
+<span class="fc bfc" id="L28" title="All 4 branches covered.">        if (amount &lt;= 0 || user == null) {</span>
 <span class="fc" id="L29">            throw new IllegalArgumentException(&quot;Invalid amount or user&quot;);</span>
         }
         boolean result;

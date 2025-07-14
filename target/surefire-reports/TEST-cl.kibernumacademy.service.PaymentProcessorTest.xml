@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="cl.kibernumacademy.service.PaymentProcessorTest" time="1.034" tests="3" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="cl.kibernumacademy.service.PaymentProcessorTest" time="1.066" tests="4" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="17"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="ES"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Amazon Corretto\jdk17.0.12_7\bin"/>
-    <property name="sun.java.command" value="C:\Users\Miguel\AppData\Local\Temp\surefire9360863287177807334\surefirebooter3355270851306135463.jar C:\Users\Miguel\AppData\Local\Temp\surefire9360863287177807334 2025-07-10T22-56-54_948-jvmRun1 surefire5642987228930691197tmp surefire_04054292387210457895tmp"/>
+    <property name="sun.java.command" value="C:\Users\Miguel\AppData\Local\Temp\surefire15902689521489881927\surefirebooter13316114207992894926.jar C:\Users\Miguel\AppData\Local\Temp\surefire15902689521489881927 2025-07-10T22-59-09_605-jvmRun1 surefire4371298011332703401tmp surefire_011634404771916412174tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Users\Miguel\Desktop\codigo-mockito\payment\target\test-classes;C:\Users\Miguel\Desktop\codigo-mockito\payment\target\classes;C:\Users\Miguel\.m2\repository\org\junit\jupiter\junit-jupiter\5.8.2\junit-jupiter-5.8.2.jar;C:\Users\Miguel\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.8.2\junit-jupiter-api-5.8.2.jar;C:\Users\Miguel\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\Miguel\.m2\repository\org\junit\platform\junit-platform-commons\1.8.2\junit-platform-commons-1.8.2.jar;C:\Users\Miguel\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\Miguel\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.8.2\junit-jupiter-params-5.8.2.jar;C:\Users\Miguel\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.8.2\junit-jupiter-engine-5.8.2.jar;C:\Users\Miguel\.m2\repository\org\junit\platform\junit-platform-engine\1.8.2\junit-platform-engine-1.8.2.jar;C:\Users\Miguel\.m2\repository\org\mockito\mockito-core\4.11.0\mockito-core-4.11.0.jar;C:\Users\Miguel\.m2\repository\net\bytebuddy\byte-buddy\1.12.19\byte-buddy-1.12.19.jar;C:\Users\Miguel\.m2\repository\net\bytebuddy\byte-buddy-agent\1.12.19\byte-buddy-agent-1.12.19.jar;C:\Users\Miguel\.m2\repository\org\objenesis\objenesis\3.3\objenesis-3.3.jar;C:\Users\Miguel\.m2\repository\org\mockito\mockito-junit-jupiter\4.11.0\mockito-junit-jupiter-4.11.0.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -30,7 +30,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\Miguel\AppData\Local\Temp\surefire9360863287177807334\surefirebooter3355270851306135463.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\Miguel\AppData\Local\Temp\surefire15902689521489881927\surefirebooter13316114207992894926.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="17.0.12+7-LTS"/>
@@ -57,7 +57,8 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="61.0"/>
   </properties>
-  <testcase name="testProcessPayment_InvalidAmount" classname="cl.kibernumacademy.service.PaymentProcessorTest" time="0.942"/>
-  <testcase name="testProcessPayment_CreditCard_Success" classname="cl.kibernumacademy.service.PaymentProcessorTest" time="0.046"/>
-  <testcase name="testProcessPayment_BankTransfer_Success" classname="cl.kibernumacademy.service.PaymentProcessorTest" time="0.003"/>
+  <testcase name="testProcessPayment_InvalidAmount" classname="cl.kibernumacademy.service.PaymentProcessorTest" time="0.982"/>
+  <testcase name="testProcessPayment_CreditCard_Success" classname="cl.kibernumacademy.service.PaymentProcessorTest" time="0.037"/>
+  <testcase name="testProcessPayment_NullUser" classname="cl.kibernumacademy.service.PaymentProcessorTest" time="0.002"/>
+  <testcase name="testProcessPayment_BankTransfer_Success" classname="cl.kibernumacademy.service.PaymentProcessorTest" time="0.004"/>
 </testsuite>
