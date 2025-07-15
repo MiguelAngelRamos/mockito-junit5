@@ -32,7 +32,7 @@ public class PaymentProcessor {
         if ("CreditCard".equalsIgnoreCase(method)) {
             result = creditCardPayment.process(amount, user); // Aquí se invoca el mock en los tests
         } else if ("BankTransfer".equalsIgnoreCase(method)) {
-            result = bankTransferPayment.process(amount, user);
+            result = bankTransferPayment.process(amount, user); // Aquí se invoca el mock en los tests
         } else {
             throw new IllegalArgumentException("Unknown payment method");
         }

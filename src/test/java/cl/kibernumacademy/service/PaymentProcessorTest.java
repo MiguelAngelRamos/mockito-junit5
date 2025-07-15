@@ -84,5 +84,33 @@ public class PaymentProcessorTest {
     // Verificar el mensaje de la excepción
     assertEquals("Invalid amount or user", exception.getMessage());
   }
+
+  @Test
+  void testProcessPayment_UnknownMethod() {
+    Exception exception = assertThrows(IllegalArgumentException.class, () -> paymentProcessor.processPayment(100, user, "UnknownMethod"));
+
+    // Verificar el mensaje de la excepción
+    assertEquals("Unknown payment method", exception.getMessage());
+    // Unknown payment method
+  }
+
+  @Test // Vamos testear que el pago registrado en el historial tenga los datos correctos usando ArgumentCaptor
+  void testPaymentHistory_Captor() {
+    // Configurar el mock para que retorne true
+    given(creditCardPayment.process(150.0, user)).willReturn(true);
+
+    paymentProcessor.processPayment(150.0, user, "CreditCard");
+    
+    verify(paymentHistory).add(paymentCaptor.capture());
+    Payment payment = paymentCaptor.getValue();
+
+    // Verificar los datos del pago registrado
+    assertEquals(150.0, payment.getAmount());
+    assertEquals(user, payment.getUser());
+    assertEquals("CreditCard", payment.getMethod());
+  }
+
+
+
 }
 
