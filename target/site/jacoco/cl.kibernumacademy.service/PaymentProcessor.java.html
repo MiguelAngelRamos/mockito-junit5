@@ -31,12 +31,12 @@ public class PaymentProcessor {
         boolean result;
 <span class="fc bfc" id="L32" title="All 2 branches covered.">        if (&quot;CreditCard&quot;.equalsIgnoreCase(method)) {</span>
 <span class="fc" id="L33">            result = creditCardPayment.process(amount, user); // Aquí se invoca el mock en los tests</span>
-<span class="pc bpc" id="L34" title="1 of 2 branches missed.">        } else if (&quot;BankTransfer&quot;.equalsIgnoreCase(method)) {</span>
-<span class="fc" id="L35">            result = bankTransferPayment.process(amount, user);</span>
+<span class="fc bfc" id="L34" title="All 2 branches covered.">        } else if (&quot;BankTransfer&quot;.equalsIgnoreCase(method)) {</span>
+<span class="fc" id="L35">            result = bankTransferPayment.process(amount, user); // Aquí se invoca el mock en los tests</span>
         } else {
-<span class="nc" id="L37">            throw new IllegalArgumentException(&quot;Unknown payment method&quot;);</span>
+<span class="fc" id="L37">            throw new IllegalArgumentException(&quot;Unknown payment method&quot;);</span>
         }
-<span class="pc bpc" id="L39" title="1 of 2 branches missed.">        if (result) {</span>
+<span class="fc bfc" id="L39" title="All 2 branches covered.">        if (result) {</span>
 <span class="fc" id="L40">            paymentHistory.add(new Payment(amount, user, method, LocalDateTime.now()));</span>
         }
 <span class="fc" id="L42">        return result;</span>

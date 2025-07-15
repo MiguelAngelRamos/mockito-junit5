@@ -4,15 +4,15 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-<span class="nc" id="L7">public class PaymentHistory {</span>
-<span class="nc" id="L8">    private final List&lt;Payment&gt; payments = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L7">public class PaymentHistory {</span>
+<span class="fc" id="L8">    private final List&lt;Payment&gt; payments = new ArrayList&lt;&gt;();</span>
 
     public void add(Payment payment) {
-<span class="nc" id="L11">        payments.add(payment);</span>
-<span class="nc" id="L12">    }</span>
+<span class="fc" id="L11">        payments.add(payment);</span>
+<span class="fc" id="L12">    }</span>
 
     public List&lt;Payment&gt; getPayments() {
-<span class="nc" id="L15">        return Collections.unmodifiableList(payments);</span>
+<span class="fc" id="L15">        return Collections.unmodifiableList(payments);</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

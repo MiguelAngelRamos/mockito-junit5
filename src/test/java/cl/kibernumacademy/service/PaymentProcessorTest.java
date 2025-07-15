@@ -7,11 +7,13 @@ import org.mockito.ArgumentCaptor;
 import org.mockito.Captor;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.ArgumentMatchers.any;
 // Mockito
 import static org.mockito.BDDMockito.*;
+import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.verify;
 
 import org.mockito.InjectMocks;
@@ -92,6 +94,20 @@ public class PaymentProcessorTest {
     // Verificar el mensaje de la excepción
     assertEquals("Unknown payment method", exception.getMessage());
     // Unknown payment method
+  }
+
+  @Test // Testea el caso en que el método de pago retorna false (fallo en el procesamiento)
+    void testProcessPayment_FailureInMethod() {
+        // Configura el mock para que retorne false
+        given(creditCardPayment.process(100.0, user)).willReturn(false);
+        // Ejecuta el método bajo prueba
+        boolean result = paymentProcessor.processPayment(100.0, user, "CreditCard");
+        // Verifica que el resultado sea falso
+        assertFalse(result);
+        // Verifica que se llamó al método process del mock
+        verify(creditCardPayment).process(100.0, user);
+        // Verifica que NO se agregó el pago al historial
+        verify(paymentHistory, never()).add(any(Payment.class));
   }
 
   @Test // Vamos testear que el pago registrado en el historial tenga los datos correctos usando ArgumentCaptor
